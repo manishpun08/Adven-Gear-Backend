@@ -152,6 +152,11 @@ router.get("/recruit/get/list", async (req, res) => {
         "userDetail._id": 1,
       },
     },
+    {
+      $sort: {
+        name: -1,
+      },
+    },
   ]);
 
   // calculate remaining spot
