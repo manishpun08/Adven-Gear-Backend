@@ -19,6 +19,8 @@ router.post(
   async (req, res) => {
     // extract new user from req.body
     const newUser = req.body;
+    
+    console.log(newUser);
     // find user using email
     const user = await User.findOne({ email: newUser.email });
     // if user, throw error,

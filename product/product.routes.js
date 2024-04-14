@@ -370,13 +370,14 @@ router.get("/product/list/latest", async (req, res) => {
     {
       $sort: { createdAt: -1 },
     },
-    { $limit: 5 },
+    { $limit: 8 },
     {
       $project: {
         image: 1,
         name: 1,
         price: 1,
         brand: 1,
+        description: { $substr: ["$description", 0, 150] },
       },
     },
   ]);

@@ -26,7 +26,7 @@ export let registerUserValidationSchema = Yup.object({
     .oneOf(["buyer", "seller", "admin"])
     .trim(),
 
-  image: Yup.string().default(null).nullable,
+  image: Yup.string().default(null).nullable(),
 });
 
 export let loginUserValidationSchema = Yup.object({
