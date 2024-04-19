@@ -31,7 +31,7 @@ router.post(
 
     // logged in user
     const loggedInUserId = req.loggedInUserId;
-    values.group.push(loggedInUserId);
+    values.group.unshift(loggedInUserId);
 
     await Lobby.create(values);
 

@@ -11,9 +11,16 @@ import lobbyRoutes from "./lobby/lobby.router.js";
 import resetPasswordRoutes from "./forget-password/reset.password.routes.js";
 import cron from "node-cron";
 import { deleteLobby } from "./lobby/lobby.cron.js";
-cron.schedule("7 0 * * *", () => {
-  deleteLobby();
-});
+
+cron.schedule(
+  "5 0 * * * ",
+  () => {
+    deleteLobby();
+  },
+  {
+    timezone: "Asia/Kolkata",
+  }
+);
 // my app
 const app = express();
 
