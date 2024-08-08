@@ -18,10 +18,13 @@ const router = express.Router();
 // add product, system user, role => seller
 router.post(
   "/product/add",
+  
   // authenticate if the user is seller or not
   isSeller,
+
   // validation for product
   productReqBodyValidation,
+
   // add new product
   async (req, res) => {
     // extract new product from req.body

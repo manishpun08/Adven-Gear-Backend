@@ -19,8 +19,7 @@ router.post(
   async (req, res) => {
     // extract new user from req.body
     const newUser = req.body;
-    
-    console.log(newUser);
+
     // find user using email
     const user = await User.findOne({ email: newUser.email });
     // if user, throw error,
@@ -101,7 +100,7 @@ router.post(
     // send res
     return res
       .status(200)
-      .send({ message: "success", user: user, token: token });
+      .send({ message: "Login Successful.", user: user, token: token });
   }
 );
 
@@ -116,7 +115,7 @@ router.get(
     const user = await User.findOne({ _id: userId });
     return res
       .status(200)
-      .send({ message: "user is displayed successfully.", user });
+      .send({ message: "User is displayed successfully.", user });
   }
 );
 
